@@ -270,7 +270,7 @@ class TelegramNotify extends PbxExtensionBase
         $client   = new BeanstalkClient(WorkerCdr::SELECT_CDR_TUBE);
         $cdr_data = $client->request(json_encode($filter), 2);
         if ($cdr_data == false) {
-            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ");
+            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ", LOG_ERR);
             return;
         }
         $filename = json_decode($cdr_data);
@@ -469,7 +469,7 @@ class TelegramNotify extends PbxExtensionBase
         $client                        = new BeanstalkClient(WorkerCdr::SELECT_CDR_TUBE);
         $cdr_data                      = $client->request(json_encode($filter), 2);
         if ($cdr_data == false) {
-            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ");
+            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ", LOG_ERR);
 
             return;
         }
@@ -670,7 +670,7 @@ class TelegramNotify extends PbxExtensionBase
         $client                        = new BeanstalkClient(WorkerCdr::SELECT_CDR_TUBE);
         $cdr_data                      = $client->request(json_encode($filter), 2);
         if ($cdr_data == false) {
-            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ");
+            Util::sysLogMsg('TelegramNotify', "Error get data from queue 'WorkerCdr::SELECT_CDR_TUBE'. ", LOG_ERR);
             return;
         }
         $filename = json_decode($cdr_data);
@@ -681,7 +681,7 @@ class TelegramNotify extends PbxExtensionBase
         unlink($filename);
         foreach ($history as $row) {
             if ( ! file_exists($row->recordingfile)) {
-                Util::sysLogMsg('TelegramNotify', 'Recording file not found. ');
+                Util::sysLogMsg('TelegramNotify', 'Recording file not found. ', LOG_WARNING);
                 continue;
             }
             $this->sendAudio(

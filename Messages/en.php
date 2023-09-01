@@ -7,7 +7,6 @@ return [
  * Written by Alexey Portnov, 12 2018
  */
     'repModuleTelegramNotify' => 'Module telegram bot - %repesent%',
-    'mo_ModuleModuleTemplate' => 'Module telegram bot',
     'BreadcrumbModuleTelegramNotify' => 'The Telegram messenger integration module',
     'SubHeaderModuleTelegramNotify' => 'Call notifications, callback, access to the calls history',
     'mod_tgm_Token' => 'The Telegram bot token',

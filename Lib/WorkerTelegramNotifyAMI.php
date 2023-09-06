@@ -8,6 +8,7 @@
 
 namespace Modules\ModuleTelegramNotify\Lib;
 
+use MikoPBX\Common\Handlers\CriticalErrorsHandler;
 use MikoPBX\Common\Models\Extensions;
 use MikoPBX\Core\Asterisk\AsteriskManager;
 use MikoPBX\Core\System\BeanstalkClient;
@@ -15,7 +16,6 @@ use MikoPBX\Core\System\Util;
 use MikoPBX\Core\Workers\WorkerBase;
 use MikoPBX\Core\Workers\WorkerCdr;
 use Modules\ModuleTelegramNotify\Models\ModuleTelegramNotifyUsers;
-use Exception;
 
 require_once 'Globals.php';
 
@@ -221,8 +221,6 @@ if (isset($argv) && count($argv) > 1) {
         $worker = new $workerClassname();
         $worker->start($argv);
     } catch (\Throwable $e) {
-        global $errorLogger;
-        $errorLogger->captureException($e);
-        Util::sysLogMsg("{$workerClassname}_EXCEPTION", $e->getMessage(), LOG_ERR);
+        CriticalErrorsHandler::handleExceptionWithSyslog($e);
     }
 }

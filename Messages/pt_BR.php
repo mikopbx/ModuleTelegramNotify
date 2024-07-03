@@ -3,7 +3,7 @@ return [
     'mod_tgm_ValidateTokenEmpty' => 'Token não preenchido',
     'mod_tgm_Token' => 'Token de bot do Telegram',
     'SubHeaderModuleTelegramNotify' => 'Notificações de bate-papo / trabalho com histórico de chamadas.',
-    'BreadcrumbModuleTelegramNotify' => 'Módulo de integração do telegrama',
+    'BreadcrumbModuleTelegramNotify' => 'Módulo de integração do telegram',
     'mo_ModuleTelegramNotify' => 'Módulo de integração do telegrama',
     /**
  * Copyright © MIKO LLC - All Rights Reserved

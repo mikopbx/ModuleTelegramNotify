@@ -8,7 +8,7 @@ return [
  */
     'repModuleTelegramNotify' => 'Module telegram bot - %repesent%',
     'BreadcrumbModuleTelegramNotify' => 'The Telegram messenger integration module',
-    'SubHeaderModuleTelegramNotify' => 'Call notifications, callback, access to the calls history',
+    'SubHeaderModuleTelegramNotify' => 'Call notifications, callback, access to the calls history.',
     'mod_tgm_Token' => 'The Telegram bot token',
     'mod_tgm_ValidateTokenEmpty' => 'Token is empty',
     'mo_ModuleTelegramNotify' => 'The Telegram messenger integration module',

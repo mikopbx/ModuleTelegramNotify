@@ -7,4 +7,5 @@ return [
  * Written by Alexey Portnov, 12 2018
  */
     'repModuleTelegramNotify' => 'Módulo de integração do Telegram - %repesent%',
+    'mod_tgm_Token' => 'Token de bot do telegrama',
 ];
